@@ -1,0 +1,867 @@
+---
+title: C#基础
+date: 2020-05-17
+tags:
+  - 学习，编程
+categories:
+  - Notes
+---
+
+[toc]
+
+### 3.1 字段和方法
+
+> 修改时间：2020 年 5 月 11 日 15 点 50 分
+
+#### :ballot_box_with_check: **READONLY 修饰符**
+
+- `readonly` 修饰符防止字段在构造之后被改变
+- `readonly` 字段只能在声明的时候被赋值，或在构造函数里被赋值
+
+---
+
+#### :ballot_box_with_check: **字段初始化**
+
+- 字段可以可选初始化
+- 未初始化的字段有一个默认值
+- 字段的初始化在构造函数之前运行
+
+---
+
+#### :star: **方法的签名**
+
+- 类型内方法的签名必须唯一
+- 签名：方法名、参数类型*（含顺序，但与参数名称和返回类型无关）*
+
+---
+
+#### :ballot_box_with_check: **EXPRESSION-BODIED 方法**
+
+```
+int Foo (int x) { return x * 2; }
+int Foo (int x) => x * 2;
+void Foo (int x) => Console.WriteLine(x);
+```
+
+---
+
+#### :star: **方法的重载 OVERLOAD**
+
+- 类型里的方法可以进行重载*（允许多个同名的方法同时存在）*，只要这些方法的签名不同就行
+
+```
+void Foo (int x) { ... }
+void Foo (double x) { ... }
+void Foo (int x, float y) { ... }
+void Foo (float x, int y) { ... }
+```
+
+```
+void Foo (int x) { ... }
+float Foo (int x) { ... }			// Compile-time error
+
+void Goo (int[] x) { ... }
+void Goo (params int[] x) { ... }	// Compile-time error
+```
+
+---
+
+#### :star: **按值传递 VS 按引用传递**
+
+- 参数是按值传递的还是按引用传递的，也是方法签名的一部分
+
+```
+void Foo (int x) { ... }		// 按值传递
+void Foo (ref int x) { ... }	// 按引用传递
+void Foo (out int x) { ... }	// 按引用传递
+```
+
+- `ref`和`out`都是按照引用传递，参数类型相同
+
+```
+void Foo (ref int x) { ... }
+void Foo (out int x) { ... }		// Compile-time error
+```
+
+---
+
+#### :ballot_box_with_check: **本地方法（C#7）**
+
+- 本地方法可以访问外边方法的变量和参数
+
+```
+void WriteCubes()
+{
+    Console.WriteLine (Cube(3));
+    Console.WriteLine (Cube(4));
+    Console.WriteLine (Cube(5));
+
+    int Cube (int value) => value * value * value;
+}
+```
+
+- :heavy_exclamation_mark: 不可以使用 static 修饰符
+
+---
+
+### 3.2 构造函数与解构函数
+
+> 修改时间：2020 年 5 月 11 日 17 点 31 分
+
+#### :star: **构造函数**
+
+- 运行`class`或`struct`的初始化代码
+- 和方法差不多，方法名和类型一致，返回类型也和类型一致，但不写了
+- C#7 中，允许单语句的构造函数携程 expression-bodied 成员的形式
+
+---
+
+#### :star: **构造函数重载**
+
+- `class`和`struct`可以重载构造函数
+- 调用重载构造函数时使用`this`
+
+```
+using System;
+
+public class Wine
+{
+    public decimal Price;
+    public int Year;
+    public Wine (decimal price) { Price = price; }
+    public Wine (decimal price, int year) : this (price) { Year = year; }
+}
+```
+
+- 当同一个类型下的构造函数 A 调用构造函数 B 的时候，B 先执行
+- :heavy_exclamation_mark: ​ 可以把表达式传递给另一个构造函数，但表达式本身不能使用`this`引用，因为这时候对象还没有被初始化，所以任何方法调用都会失败
+
+---
+
+#### :ballot_box_with_check: **无参构造函数**
+
+- 对于`class`，如果你*没有定义*任何构造函数的话，那么 C#编译器会*自动生成*一个无参的`public`构造函数
+- 但是如果你*定义*了构造函数，那么这个无参的构造函数就*不会被生成*了
+
+---
+
+#### :ballot_box_with_check: **构造函数和字段的初始化顺序**
+
+- _字段的初始化发生在构造函数执行之前_
+- 字段按照声明的先后顺序进行初始化
+
+---
+
+#### :ballot_box_with_check: **DECONSTRUCTOR（C#7）**
+
+- C#7 引入了 deconstructor 模式
+- 作用基本和构造函数相反，它会把字段反赋给一堆变量
+- :heavy_exclamation_mark: 方法名必须是`Deconstruct`，有一个或多个`out`参数
+
+```
+public void Deconstruct(out string name, out int age)
+{
+    name = this.name;
+    age = this.age;
+}
+```
+
+```
+var stu = new Student("Jack"， 18);
+var (name, age) = stu;
+```
+
+- Deconstruction 可以被重载
+- Deconstruction 这个方法可以是扩展方法
+
+```
+public static class Extensions
+{
+    public static void Deconstruct(this Student stu, out string name, out int age)
+    {
+        name = stu.name;
+        age = stu.age;
+    }
+}
+```
+
+```
+var stu = new Student("Jack", 21);
+stu.Deconstruct(out var name, out var age);
+```
+
+---
+
+### 3.3 对象初始化、this、属性、索引器
+
+> 修改时间：2020 年 5 月 11 日 23 点 47 分
+
+#### :ballot_box_with_check: **对象初始化器**
+
+- 对象任何可访问的字段/属性在构建之后，可通过对象初始化器直接为其进行设定值
+
+```
+public class Bunny
+{
+    public string Name;
+    public bool LikesCarrots;
+    public bool LikesHumans;
+
+    public Bunny () {}
+    public Bunny (string n) { Name = n }
+}
+```
+
+```
+Bunny b1 = new Bunny { Name = "Bo", LikesCarrots = true, LikesHumans = false };
+Bunnt b2 = new Bunnt ("Bo") { LikesCarrots = true, LikesHumans = false };
+```
+
+---
+
+#### :ballot_box_with_check: **对象初始化器 VS 可选参数**
+
+- 如果不使用初始化器，上例中的构造函数也可以使用可选参数：
+
+```
+public Bunny (string name, bool likesCarrots = false, bool likesHumans = false)
+{
+    Name = name;
+    LikesCarrots = likesCarrots;
+    LikesHumans = likesHumans;
+}
+```
+
+```
+Bunny b1 = new Bunny (name: "Bo", likesCarrots: true);
+```
+
+- 可选参数方式
+  - _优点_：可以让 Bunny 类的字段/属性只读
+  - _缺点_：每个可选参数的值都被嵌入到 calling sit，C#会把构造函数的调用翻译成：
+
+```
+Bunny b1 = new Bunny ("Bo", true, false);
+```
+
+---
+
+#### :star: **THIS 引用**
+
+- `this`引用指的是实例的本身
+
+```
+public class Panda
+{
+    public Panda Mate;
+
+    public void Marry (Panda partner)
+    {
+        Mate = partner;
+        partner.Mate = this;
+    }
+}
+```
+
+- `this`引用可以让你把字段与本地变量或参数区分开
+- :heavy_exclamation_mark: 只有`class/struct`的非静态成员才可以使用`this`
+
+```
+public class Test
+{
+    string name;
+    public Test (string name) { this.name = name; }
+}
+```
+
+---
+
+#### :star: **属性 PROPERTYIES**
+
+- 从外边来看，属性和字段很像。但从内部看，属性含有逻辑，就像方法一样
+- 属性的声明和字段的声明很像，但多了一个`get set`块。
+
+```
+public class Stock
+{
+    decimal currentPrice;
+
+    public decimal CurrentPrice
+    {
+        get { return currentPrice; }
+        set { currentPrice = value; }
+    }
+}
+```
+
+- `get/set`代表属性的访问器
+- `get`访问器会在属性被*读取*的时候运行，必须返回一个该属性类型的值
+- `set`访问器会在属性被*赋值*的时候运行，有一个隐式的该类型的参数`value`，通常你会把`value`赋给一个*私有字段*
+
+> _属性与字段的区别_：尽管属性的访问方式与字段的访问方式相同，但不同之处在于，属性赋予了实现者对获取和赋值的完全控制权。这种控制允许实现者选择任意所需的内部表示，<u>不向属性的使用者公开其内部实现细节</u>
+
+---
+
+#### :ballot_box_with_check: **只读和计算的属性**
+
+- 如果属性只有`get`访问器，那么它是*只读*的
+- 如果只有`set`访问器，那么它就是只写的（很少这样用）
+- 属性通常拥有一个专用的“幕后”字段（backing field），这个幕后字段用来存储数据
+
+```
+decimal currentPrice, shareOwned;
+
+public deciaml Worth
+{
+    get { return currentPrice * sharesOwned; }
+}
+```
+
+---
+
+#### :ballot_box_with_check: **EXPRESSION_BODIED 属性**
+
+- 从 C#6 开始，你可以使用 Expression-bodied 形式来表示只读属性
+
+```
+public decimal Worth => currentPrice * sharesOwned;
+```
+
+- C#7，允许`set`访问器也使用该形式
+
+```
+public decimal Worth
+{
+    get => currentPrice * sharesOwned;
+    set => sharesOwned = value / currentPrice;
+}
+```
+
+---
+
+#### :ballot_box_with_check: **自动属性**
+
+- 属性最常见的一种实践就是：getter 和 setter 只是对 private field 进行简单直接的读写
+- 自动属性声明就告诉编译器来提供这种实现
+
+```
+pulbic class Stock
+{
+    ...
+		public decimal CurrentPrice { get; set; }
+}
+```
+
+- 编译器会自动生成一个私有的幕后字段，:heavy_exclamation_mark: 其名称不可以引用（由编译器生成）
+- _`set`访问器也可以是`private`或`protected`_
+
+---
+
+#### :ballot_box_with_check: **属性初始化器**
+
+- 从 C#6 开始，你可以为自动属性添加属性初始化器
+
+```
+public decimal CurrentPrice { get; set; } = 123;
+```
+
+- _只读的自动属性也可以使用（只读自动属性也可以在构造函数里被赋值）_
+
+```
+public int Maximum { get; } = 999;
+```
+
+---
+
+#### :ballot_box_with_check: **GET 和 SET 的访问性**
+
+- `get`和`set`访问器可以拥有不同的访问级别
+  - _典型用法_：`public get`，`internal/private set`
+
+```
+public class Foo
+{
+    private decimal x;
+    public decimal X
+    {
+        get	{ return x; }
+        private set { x = Math.Round (value, 2); }
+    }
+}
+```
+
+- :heavy_exclamation_mark: 注意，属性的访问级别更“宽松”一些，访问器的访问级别更“严”一些
+
+---
+
+#### :ballot_box_with_check: **索引器**
+
+- 索引器提供了一种可以访问封装了列表值或字典值的`class/struct`的元素的一种自然的语法
+
+```
+string s = "hello";
+Console.WriteLine (s[0]);	// 'h'
+Console.WriteLine (s[3]);	// 'l'
+```
+
+- 语法很像使用数组时用的语法，但是这里的索引参数可以是任何类型的
+- 索引器和属性拥有同样的修饰符
+- 可以按照下列方式使用 null 条件操作符
+
+```
+string s = null;
+Console.WriteLine (s?[0]);
+```
+
+- 实现索引器：需要定义一个*this*属性，并通过中括号指定参数
+
+```
+class Sentence
+{
+    string[] words = "The quick brown fox".Split();
+
+    public string this [int wordNum]	// indexer
+    {
+        get { return words [wordNum]; }
+        set { words [wordNum] = value; }
+    }
+}
+```
+
+- 一个索引器可以声明多个索引器，它们的参数类型可以不同
+- 一个索引器可以有多个参数
+
+```
+public string this [int arg1, string arg2]
+{
+    get { ... } set { ... }
+}
+```
+
+- 如果不写`set`访问器，那么这个索引器就是*只读*的
+- 在 C#6 以后，也可以使用 expression-bodied 语法
+
+```
+public string this [int wordNum] => words [wordNum];
+```
+
+---
+
+### 3.4 常量、静态构造函数和类、终结器、局部类和方法、nameof
+
+> 修改时间：2020 年 5 月 13 日 15 点 35 分
+
+#### :ballot_box_with_check: **常量**
+
+- 一个*值不可以改变*的*静态字段*
+- 在*编译时*值就已经定下来了
+- 任何使用常量的地方，编译器都会把这个常量值替换为它的值
+- 常量的类型可以是内置的数值类型、bool、char、string 或 enum
+- :heavy_exclamation_mark: 使用 const 关键字声明，声明的同时必须使用具体的值来对比其初始化
+
+```
+public class Test
+{
+    public const string Message = "Hello World";
+}
+```
+
+---
+
+#### :ballot_box_with_check: **常量与静态只读字段**
+
+- 常量比静态字段更严格:
+  - 可使用的类型
+  - 字段初始化的语义上
+- 常量是再编译时进行值的估算的
+
+> _注意_：当值有可能改变，并且需要暴露给其他 Assembly 的时候，静态只读字段是相对较好的选择
+
+---
+
+#### :ballot_box_with_check: **本地常量**
+
+- 方法里可以有本地的常量
+
+```
+static void Main()
+{
+    const double twoPI = 2 * System.Math.PI;
+    	...
+}
+```
+
+---
+
+#### :ballot_box_with_check: **静态构造函数**
+
+- 静态构造函数，每个*类型*执行一次
+- 非静态构造函数，每个*实例*执行一次
+- :heavy_exclamation_mark: 一个类型只能定义一个静态构造函数
+  - 必须无参
+  - 方法名与类型一致
+
+```
+class Test
+{
+    static Test() { Console.WriteLine ("Type Initialized"); }
+}
+```
+
+- 在类型使用之前的一瞬间，编译器会自动调用类型的静态构造函数
+  - 实例化一个实例
+  - 访问类型的一个静态成员
+- :heavy_exclamation_mark: 只允许使用`unsafe`和`extern`修饰符
+
+> _注意_：如果静态构造函数抛出了未处理的异常，那么这个类型在该程序的剩余声明周期将无法使用了
+
+---
+
+#### :star: **初始化顺序**
+
+- 静态字段的初始化器在静态构造函数被调用之前的一瞬间运行
+- 如果类型没有静态构造函数，那么静态字段初始化器在类型被使用之前的一瞬间执行，或者在运行时突发奇想的时候执行
+- 静态字段的初始化顺序与它们的声明顺序一致
+
+```
+class Foo
+{
+    public static int X = Y;		// 0
+    public static int Y = X;		// 3
+}
+```
+
+```
+class Program
+{
+    static void Main() { Console.WriteLine (Foo.X); }	// 3
+}
+
+class Foo
+{
+    public static Foo Instance = new Foo();
+    public static int X = 3;
+
+    Foo() { Console.WriteLine (x); }	// 0
+}
+```
+
+---
+
+#### :ballot_box_with_check: **静态类**
+
+- 类也可以是静态的
+- 其成员必须全是静态的
+- 不可以有子类
+- 例如
+  - `System.Console`
+  - `System.Math`
+
+---
+
+#### :ballot_box_with_check: **FINALIZER 析构函数**
+
+- Finalizer 是 class 专有的一种方法
+- 在 GC 回收未引用对象的内存之前运行
+- 其实就是对 object 的 Finalize()方法重写的一种语法
+
+```
+class Class1
+{
+    ~Class1()
+    {
+        ...
+    }
+}
+```
+
+---
+
+#### :star: **PARTIAL TYPE 局部类型**
+
+- 允许一个类型的定义分布在多个地方（文件）
+- 典型应用：一个类的一部分是自动生成的，另一部分需要手动写代码
+
+```
+// PaymentFormGen.cs - auto-generated
+partial class PaymentForm { ... }
+
+// PaymentForm.cs - hand-authored
+partial class PaymentForm { ... }
+```
+
+- 每个分布的类型都必须使用`partial`来声明
+- :negative_squared_cross_mark: 下面这个例子就会报错：
+
+```
+partial class PaymentForm {}
+class PaymentForm {}
+```
+
+- :heavy_exclamation_mark: 每个分布类的成员不能冲突，不能有同样参数的构造函数
+- 各分布类完全靠编译器来进行解析：:heavy_exclamation_mark: 每个分布类在编译时必须可用，且在一个 Assembly 里
+- 如果有父类，可以在一个或多个分布类上指明，但必须一致
+- 每个分布类可以独立的实现不同的接口
+- 编译器无法保证各分布类的字段的初始化顺序
+
+---
+
+#### :star: **PARTIAL METHOD 局部方法**
+
+- `partial`类型可以有 partial method
+- 自动生成的分布类里可以有 partial method，通常作为“钩子”使用，在另一部分的 partial method 里，我们可以对这个方法进行自定义
+
+```
+partial class PaymentForm		// In auto-generated file
+{
+    ...
+    partial void ValidatePayment (decimal amout);
+}
+
+partial class PaymentForm		// In hand-authored file
+{
+    ...
+    partial void ValidatePayment (deciaml amout)
+    {
+      if (amout > 100)
+          ...
+    }
+}
+```
+
+- partial method 由两部分组成：定义和实现
+- 定义部分通常是*自动生成*的
+- 实现部分通常时*手动编写*的
+- 如果 partial method 只有定义，没有实现，那么编译的时候该方法定义就没有了，调用该方法的代码也没有了。这就允许自动生成的代码可以自由的提供钩子，不用担心代码膨胀
+- partial method 必须是`void`，并且隐式`private`的
+
+---
+
+#### :ballot_box_with_check: **NAMEOF 操作符 C#6**
+
+- `nameof`操作符会返回任何符号（类型、成员、变量...)的名字（string）
+- 利于重构
+
+```
+int count = 123;
+string name = nameof (count);	// name is "count"
+```
+
+```
+string name = nameof (StringBuilder.Length);	// name is "Length"
+```
+
+---
+
+### 3.5 继承、多态、引用转换、virtual
+
+> 修改时间：2020 年 5 月 14 日 11 点 56 分
+
+#### :star: **继承**
+
+- 一个类可以继承另一个类，从而对原有类进行扩展和自定义
+- 可以叫做子类和父类
+- 继承的类让你可以重用被继承的功能
+- C#里，_一个类只能继承于一个类，但是这个类却可以被多个类继承_
+
+---
+
+#### :star: **多态**
+
+- 引用是多态的，类型为 x 的变量可以引用其子类的对象
+
+```
+public static void Display (Assset asset)
+{
+    System.Console.WriteLine (asset.Name);
+}
+```
+
+```
+Stock msft = new Stock ...;
+House mansion = new House ...;
+
+Display (msft);
+Display (mansion);
+```
+
+- 因为子类具有父类的全部功能特性，所以参数可以是子类
+- :heavy_exclamation_mark: 反过来则不行
+
+```
+static void Main() { Display (new Asset()); }	// Compile-time error
+
+public static void Display (House house)	// Will not accept Asset
+{
+    System.Console.WriteLine (house.Mortgage);
+}
+```
+
+---
+
+#### :star: **引用转换**
+
+- 一个对象的引用可以*隐式*转换到其父类的引用（向上转换）
+- 想转换到子类的引用则需要*显式*转换（向下转换）
+- 引用转换：_创建了一个新的引用，它也指向同一个对象_
+
+---
+
+#### :ballot_box_with_check: **向上转换**
+
+- 从子类的引用创建父类的引用
+
+```
+Stock msft = new Stock();
+Asset a = msft;			// Upcast
+```
+
+- 变量 a 依然指向同一个 Stock 对象（msft 也指向它）
+
+```
+Console.WriteLine (a == msft);			// True
+```
+
+- 尽管变量 a 和 msft 指向同一个对象，但是 a 的可视范围更小一些
+
+```
+Console.WriteLine (a.Name);			// OK
+Console.WriteLine (a.ShareOwned);	// Error: SharesOwned undefined
+```
+
+---
+
+#### :ballot_box_with_check: **向下转换**
+
+- 从父类的引用创建出子类的引用
+
+```
+Stock msft = new Stock();
+Asset a = msft;							// Upcast
+Stock s = (Stock)a;						// Downcast
+Console.WriteLine (s.SharesOwned);		// <No error>
+COnsole.WriteLine (s == a);				// True
+Console.WriteLine (s == msft);			// True
+```
+
+- 和向上转换一样，只涉及到引用，底层的对象不会受影响
+- 需要显式转换，因为可能会失败
+
+```
+House h = new House();
+Asset a = h;				// Upcast always succeeds
+Stock s = (Stock)a;			// Downcast fails: a is not a Stock
+```
+
+- 如果向下转换失败，那么会抛出 InvalidCasstException（属于运行时类型检查）
+
+---
+
+#### :ballot_box_with_check: **AS 操作符**
+
+- `as`操作符会执行向下转换，如果转换失败，_不会抛出异常_，值会变为`null`
+
+```
+Asset a = new Asset();
+Stock s = a as Stock;		// s is null; no exception thrown
+```
+
+- `as`操作符无法做自定义转换
+
+```
+long x = 3 as long;		// Compile-time error
+```
+
+---
+
+#### :ballot_box_with_check: **IS 操作符和模式变量**
+
+- `is`操作符会检验引用的转换是否成功。换句话说，判断对象是否派生于某个类（或者实现了某个接口）
+- 通常用于向下转换前的验证
+
+```
+if (as is Stock)
+    Console.WriteLine (((Stock)a).ShareOwned);
+```
+
+- 如果拆箱转换可以成功的话，那么使用`is`操作符的结果会是`true`
+
+- C#7 里，在使用`is`操作符的时候，可以引入一个变量
+
+```
+if (a is Stock s)
+    Console.WriteLine (s.SharesOwned);
+```
+
+```
+Stock s;
+if (a is Stock)
+{
+    s = (Stock) a;
+    Console.WriteLine (s.SharesOwned);
+}
+```
+
+- 引用的变量可以立即“消费”
+
+```
+if (a is Stock s && s.SharesOwned > 100000)
+    Console.WriteLine ("Wealthy");
+```
+
+```
+if (a is Stock s && s.SharesOwned > 100000)
+    Console.WriteLine ("Wealthy");
+else
+    s = new Stock();	// s is in scope
+Console.WriteLine (s.ShareOwned);	// Still in scope
+```
+
+---
+
+#### :star: **VIRTUAL 函数成员**
+
+- 标记为`virtual`的函数可以被子类重写，包括*方法、属性、索引器、事件*
+
+```
+public class Asset
+{
+    public string Name;
+    public virtual decimal Liability => 0;
+}
+```
+
+---
+
+#### :star: **OVERRIDE 重写**
+
+- 使用`override`修饰符，子类可以重写父类的函数
+
+```
+public class Stock : Asset
+{
+    public long SharesOwned;
+}
+
+public class House : Asset
+{
+    public decimal Mortgage;
+    public override decimal Liability => Mortgage;
+}
+```
+
+```
+House mansion = new House { Name = "McMansion", Mortgage = 250000 };
+Asset a = mansion;
+Console.WriteLine (mansion.Liability);	// 250000
+Console.WriteLine (a.Liability);		// 250000
+```
+
+- `virtual`方法和重写方法的*签名、返回类型、可访问程度*必须是*一致*的
+- 重写方法里使用 base 关键字可以调用父类的是实现
+
+> _注意_：在构造函数里调用`virtual`方法可能比较危险，因为编写子类的开发人员可能不知道他们在重写方法的时候，面对的是一个未完全初始化的对象。
+>
+> 换句话说，<u>重写的方法可能会访问依赖于还未被构造函数初始化的字段的属性或方法</u>
+
+---

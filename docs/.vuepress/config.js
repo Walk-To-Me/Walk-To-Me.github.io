@@ -1,6 +1,6 @@
 module.exports = {
-  title: "MyDocker",
-  description: "my-blog",
+  title: "IDocker",
+  description: "Walk-To-Me",
   dest: "public",
   head: [
     [
