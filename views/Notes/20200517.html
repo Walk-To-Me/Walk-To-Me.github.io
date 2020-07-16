@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>C#基础 | IDocker</title>
+    <meta name="generator" content="VuePress 1.4.1">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="description" content="Walk-To-Me">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <link rel="preload" href="/assets/css/0.styles.2f5be9d5.css" as="style"><link rel="preload" href="/assets/js/app.d9584d57.js" as="script"><link rel="preload" href="/assets/js/3.0f02f0c2.js" as="script"><link rel="preload" href="/assets/js/1.9aba950e.js" as="script"><link rel="preload" href="/assets/js/11.07b7525a.js" as="script"><link rel="prefetch" href="/assets/js/10.8d786ede.js"><link rel="prefetch" href="/assets/js/12.a90ae0b4.js"><link rel="prefetch" href="/assets/js/13.5368625c.js"><link rel="prefetch" href="/assets/js/14.2c2c35ef.js"><link rel="prefetch" href="/assets/js/15.1985003f.js"><link rel="prefetch" href="/assets/js/16.911902b8.js"><link rel="prefetch" href="/assets/js/17.2ce48f10.js"><link rel="prefetch" href="/assets/js/4.bc4c13bf.js"><link rel="prefetch" href="/assets/js/5.a7429f0f.js"><link rel="prefetch" href="/assets/js/6.0246a68f.js"><link rel="prefetch" href="/assets/js/7.a18c8b33.js"><link rel="prefetch" href="/assets/js/8.95cdedb7.js"><link rel="prefetch" href="/assets/js/9.44a6fa80.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.2f5be9d5.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container" data-v-c00e2ab0><div data-v-c00e2ab0><div id="loader-wrapper" class="loading-wrapper" data-v-71fac282 data-v-c00e2ab0 data-v-c00e2ab0><div class="loader-main" data-v-71fac282><div data-v-71fac282></div><div data-v-71fac282></div><div data-v-71fac282></div><div data-v-71fac282></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-4a776749 data-v-c00e2ab0 data-v-c00e2ab0><h3 class="title" style="display:none;" data-v-4a776749 data-v-4a776749>IDocker</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-4a776749 data-v-4a776749><input type="password" value="" data-v-4a776749> <span data-v-4a776749>Konck! Knock!</span> <button data-v-4a776749>OK</button></label> <div class="footer" style="display:none;" data-v-4a776749 data-v-4a776749><span data-v-4a776749><i class="iconfont reco-theme" data-v-4a776749></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-4a776749>vuePress-theme-reco</a></span> <span data-v-4a776749><i class="iconfont reco-copyright" data-v-4a776749></i> <a data-v-4a776749><span data-v-4a776749>Air_Code</span>
+            
+          <span data-v-4a776749>2017 - </span>
+          2020
+        </a></span></div></div> <div class="hide" data-v-c00e2ab0><header class="navbar" data-v-c00e2ab0><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="IDocker" class="logo"> <span class="site-name">IDocker</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      Category
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/Notes/" class="nav-link"><i class="iconfont undefined"></i>
+  Notes
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Summary/" class="nav-link"><i class="iconfont undefined"></i>
+  Summary
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tag
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      Contact
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/recoluan" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-c00e2ab0></div> <aside class="sidebar" data-v-c00e2ab0><div class="personal-info-wrapper" data-v-1285c3cd><img src="/avatar.png" alt="author-avatar" class="personal-img" data-v-1285c3cd> <h3 class="name" data-v-1285c3cd>
+    Air_Code
+  </h3> <div class="num" data-v-1285c3cd><div data-v-1285c3cd><h3 data-v-1285c3cd>5</h3> <h6 data-v-1285c3cd>Article</h6></div> <div data-v-1285c3cd><h3 data-v-1285c3cd>2</h3> <h6 data-v-1285c3cd>Tag</h6></div></div> <hr data-v-1285c3cd></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      Category
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/Notes/" class="nav-link"><i class="iconfont undefined"></i>
+  Notes
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Summary/" class="nav-link"><i class="iconfont undefined"></i>
+  Summary
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tag
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      Contact
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/recoluan" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>C#基础</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/views/Notes/20200517.html#_3-1-字段和方法" class="sidebar-link">3.1 字段和方法</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/views/Notes/20200517.html#readonly-修饰符" class="sidebar-link">☑️ READONLY 修饰符</a></li><li class="sidebar-sub-header"><a href="/views/Notes/20200517.html#字段初始化" class="sidebar-link">☑️ 字段初始化</a></li><li class="sidebar-sub-header"><a href="/views/Notes/20200517.html#方法的签名" class="sidebar-link">⭐️ 方法的签名</a></li><li class="sidebar-sub-header"><a href="/views/Notes/20200517.html#expression-bodied-方法" class="sidebar-link">☑️ EXPRESSION-BODIED 方法</a></li><li class="sidebar-sub-header"><a href="/views/Notes/20200517.html#方法的重载-overload" class="sidebar-link">⭐️ 方法的重载 OVERLOAD</a></li><li class="sidebar-sub-header"><a href="/views/Notes/20200517.html#按值传递-vs-按引用传递" class="sidebar-link">⭐️ 按值传递 VS 按引用传递</a></li><li class="sidebar-sub-header"><a href="/views/Notes/20200517.html#本地方法（c-7）" class="sidebar-link">☑️ 本地方法（C#7）</a></li></ul></li><li><a href="/views/Notes/20200517.html#_3-2-构造函数与解构函数" class="sidebar-link">3.2 构造函数与解构函数</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/views/Notes/20200517.html#构造函数" class="sidebar-link">⭐️ 构造函数</a></li><li class="sidebar-sub-header"><a href="/views/Notes/20200517.html#构造函数重载" class="sidebar-link">⭐️ 构造函数重载</a></li><li class="sidebar-sub-header"><a href="/views/Notes/20200517.html#无参构造函数" class="sidebar-link">☑️ 无参构造函数</a></li><li class="sidebar-sub-header"><a href="/views/Notes/20200517.html#构造函数和字段的初始化顺序" class="sidebar-link">☑️ 构造函数和字段的初始化顺序</a></li><li class="sidebar-sub-header"><a href="/views/Notes/20200517.html#deconstructor（c-7）" class="sidebar-link">☑️ DECONSTRUCTOR（C#7）</a></li></ul></li><li><a href="/views/Notes/20200517.html#_3-3-对象初始化、this、属性、索引器" class="sidebar-link">3.3 对象初始化、this、属性、索引器</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/views/Notes/20200517.html#对象初始化器" class="sidebar-link">☑️ 对象初始化器</a></li><li class="sidebar-sub-header"><a href="/views/Notes/20200517.html#对象初始化器-vs-可选参数" class="sidebar-link">☑️ 对象初始化器 VS 可选参数</a></li><li class="sidebar-sub-header"><a href="/views/Notes/20200517.html#this-引用" class="sidebar-link">⭐️ THIS 引用</a></li><li class="sidebar-sub-header"><a href="/views/Notes/20200517.html#属性-propertyies" class="sidebar-link">⭐️ 属性 PROPERTYIES</a></li><li class="sidebar-sub-header"><a href="/views/Notes/20200517.html#只读和计算的属性" class="sidebar-link">☑️ 只读和计算的属性</a></li><li class="sidebar-sub-header"><a href="/views/Notes/20200517.html#expression-bodied-属性" class="sidebar-link">☑️ EXPRESSION_BODIED 属性</a></li><li class="sidebar-sub-header"><a href="/views/Notes/20200517.html#自动属性" class="sidebar-link">☑️ 自动属性</a></li><li class="sidebar-sub-header"><a href="/views/Notes/20200517.html#属性初始化器" class="sidebar-link">☑️ 属性初始化器</a></li><li class="sidebar-sub-header"><a href="/views/Notes/20200517.html#get-和-set-的访问性" class="sidebar-link">☑️ GET 和 SET 的访问性</a></li><li class="sidebar-sub-header"><a href="/views/Notes/20200517.html#索引器" class="sidebar-link">☑️ 索引器</a></li></ul></li><li><a href="/views/Notes/20200517.html#_3-4-常量、静态构造函数和类、终结器、局部类和方法、nameof" class="sidebar-link">3.4 常量、静态构造函数和类、终结器、局部类和方法、nameof</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/views/Notes/20200517.html#常量" class="sidebar-link">☑️ 常量</a></li><li class="sidebar-sub-header"><a href="/views/Notes/20200517.html#常量与静态只读字段" class="sidebar-link">☑️ 常量与静态只读字段</a></li><li class="sidebar-sub-header"><a href="/views/Notes/20200517.html#本地常量" class="sidebar-link">☑️ 本地常量</a></li><li class="sidebar-sub-header"><a href="/views/Notes/20200517.html#静态构造函数" class="sidebar-link">☑️ 静态构造函数</a></li><li class="sidebar-sub-header"><a href="/views/Notes/20200517.html#初始化顺序" class="sidebar-link">⭐️ 初始化顺序</a></li><li class="sidebar-sub-header"><a href="/views/Notes/20200517.html#静态类" class="sidebar-link">☑️ 静态类</a></li><li class="sidebar-sub-header"><a href="/views/Notes/20200517.html#finalizer-析构函数" class="sidebar-link">☑️ FINALIZER 析构函数</a></li><li class="sidebar-sub-header"><a href="/views/Notes/20200517.html#partial-type-局部类型" class="sidebar-link">⭐️ PARTIAL TYPE 局部类型</a></li><li class="sidebar-sub-header"><a href="/views/Notes/20200517.html#partial-method-局部方法" class="sidebar-link">⭐️ PARTIAL METHOD 局部方法</a></li><li class="sidebar-sub-header"><a href="/views/Notes/20200517.html#nameof-操作符-c-6" class="sidebar-link">☑️ NAMEOF 操作符 C#6</a></li></ul></li><li><a href="/views/Notes/20200517.html#_3-5-继承、多态、引用转换、virtual" class="sidebar-link">3.5 继承、多态、引用转换、virtual</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/views/Notes/20200517.html#继承" class="sidebar-link">⭐️ 继承</a></li><li class="sidebar-sub-header"><a href="/views/Notes/20200517.html#多态" class="sidebar-link">⭐️ 多态</a></li><li class="sidebar-sub-header"><a href="/views/Notes/20200517.html#引用转换" class="sidebar-link">⭐️ 引用转换</a></li><li class="sidebar-sub-header"><a href="/views/Notes/20200517.html#向上转换" class="sidebar-link">☑️ 向上转换</a></li><li class="sidebar-sub-header"><a href="/views/Notes/20200517.html#向下转换" class="sidebar-link">☑️ 向下转换</a></li><li class="sidebar-sub-header"><a href="/views/Notes/20200517.html#as-操作符" class="sidebar-link">☑️ AS 操作符</a></li><li class="sidebar-sub-header"><a href="/views/Notes/20200517.html#is-操作符和模式变量" class="sidebar-link">☑️ IS 操作符和模式变量</a></li><li class="sidebar-sub-header"><a href="/views/Notes/20200517.html#virtual-函数成员" class="sidebar-link">⭐️ VIRTUAL 函数成员</a></li><li class="sidebar-sub-header"><a href="/views/Notes/20200517.html#override-重写" class="sidebar-link">⭐️ OVERRIDE 重写</a></li></ul></li></ul></section></li></ul> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-4a776749 data-v-c00e2ab0><h3 class="title" style="display:none;" data-v-4a776749 data-v-4a776749>C#基础</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-4a776749 data-v-4a776749><input type="password" value="" data-v-4a776749> <span data-v-4a776749>Konck! Knock!</span> <button data-v-4a776749>OK</button></label> <div class="footer" style="display:none;" data-v-4a776749 data-v-4a776749><span data-v-4a776749><i class="iconfont reco-theme" data-v-4a776749></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-4a776749>vuePress-theme-reco</a></span> <span data-v-4a776749><i class="iconfont reco-copyright" data-v-4a776749></i> <a data-v-4a776749><span data-v-4a776749>Air_Code</span>
+            
+          <span data-v-4a776749>2017 - </span>
+          2020
+        </a></span></div></div> <div data-v-c00e2ab0><main class="page"><div class="page-title" style="display:none;"><h1>C#基础</h1> <hr> <div data-v-ba876724><i class="iconfont reco-account" data-v-ba876724><span data-v-ba876724>Air_Code</span></i> <i class="iconfont reco-date" data-v-ba876724><span data-v-ba876724>2020-05-17</span></i> <!----> <i class="iconfont reco-tag tags" data-v-ba876724><span class="tag-item" data-v-ba876724>
+      学习，编程
+    </span></i></div></div> <div class="theme-reco-content content__default" style="display:none;"><h2 id="_3-1-字段和方法"><a href="#_3-1-字段和方法" class="header-anchor">#</a> 3.1 字段和方法</h2> <blockquote><p>修改时间：2020 年 5 月 11 日 15 点 50 分</p></blockquote> <h3 id="readonly-修饰符"><a href="#readonly-修饰符" class="header-anchor">#</a> ☑️ <strong>READONLY 修饰符</strong></h3> <ul><li><code>readonly</code> 修饰符防止字段在构造之后被改变</li> <li><code>readonly</code> 字段只能在声明的时候被赋值，或在构造函数里被赋值</li></ul> <hr> <h3 id="字段初始化"><a href="#字段初始化" class="header-anchor">#</a> ☑️ <strong>字段初始化</strong></h3> <ul><li>字段可以可选初始化</li> <li>未初始化的字段有一个默认值</li> <li>字段的初始化在构造函数之前运行</li></ul> <hr> <h3 id="方法的签名"><a href="#方法的签名" class="header-anchor">#</a> ⭐️ <strong>方法的签名</strong></h3> <ul><li>类型内方法的签名必须唯一</li> <li>签名：方法名、参数类型*（含顺序，但与参数名称和返回类型无关）*</li></ul> <hr> <h3 id="expression-bodied-方法"><a href="#expression-bodied-方法" class="header-anchor">#</a> ☑️ <strong>EXPRESSION-BODIED 方法</strong></h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>int Foo (int x) { return x * 2; }
+int Foo (int x) =&gt; x * 2;
+void Foo (int x) =&gt; Console.WriteLine(x);
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><hr> <h3 id="方法的重载-overload"><a href="#方法的重载-overload" class="header-anchor">#</a> ⭐️ <strong>方法的重载 OVERLOAD</strong></h3> <ul><li>类型里的方法可以进行重载*（允许多个同名的方法同时存在）*，只要这些方法的签名不同就行</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>void Foo (int x) { ... }
+void Foo (double x) { ... }
+void Foo (int x, float y) { ... }
+void Foo (float x, int y) { ... }
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>void Foo (int x) { ... }
+float Foo (int x) { ... }			// Compile-time error
+
+void Goo (int[] x) { ... }
+void Goo (params int[] x) { ... }	// Compile-time error
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><hr> <h3 id="按值传递-vs-按引用传递"><a href="#按值传递-vs-按引用传递" class="header-anchor">#</a> ⭐️ <strong>按值传递 VS 按引用传递</strong></h3> <ul><li>参数是按值传递的还是按引用传递的，也是方法签名的一部分</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>void Foo (int x) { ... }		// 按值传递
+void Foo (ref int x) { ... }	// 按引用传递
+void Foo (out int x) { ... }	// 按引用传递
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><ul><li><code>ref</code>和<code>out</code>都是按照引用传递，参数类型相同</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>void Foo (ref int x) { ... }
+void Foo (out int x) { ... }		// Compile-time error
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><hr> <h3 id="本地方法（c-7）"><a href="#本地方法（c-7）" class="header-anchor">#</a> ☑️ <strong>本地方法（C#7）</strong></h3> <ul><li>本地方法可以访问外边方法的变量和参数</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>void WriteCubes()
+{
+    Console.WriteLine (Cube(3));
+    Console.WriteLine (Cube(4));
+    Console.WriteLine (Cube(5));
+
+    int Cube (int value) =&gt; value * value * value;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><ul><li>❗️ 不可以使用 static 修饰符</li></ul> <hr> <h2 id="_3-2-构造函数与解构函数"><a href="#_3-2-构造函数与解构函数" class="header-anchor">#</a> 3.2 构造函数与解构函数</h2> <blockquote><p>修改时间：2020 年 5 月 11 日 17 点 31 分</p></blockquote> <h3 id="构造函数"><a href="#构造函数" class="header-anchor">#</a> ⭐️ <strong>构造函数</strong></h3> <ul><li>运行<code>class</code>或<code>struct</code>的初始化代码</li> <li>和方法差不多，方法名和类型一致，返回类型也和类型一致，但不写了</li> <li>C#7 中，允许单语句的构造函数携程 expression-bodied 成员的形式</li></ul> <hr> <h3 id="构造函数重载"><a href="#构造函数重载" class="header-anchor">#</a> ⭐️ <strong>构造函数重载</strong></h3> <ul><li><code>class</code>和<code>struct</code>可以重载构造函数</li> <li>调用重载构造函数时使用<code>this</code></li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>using System;
+
+public class Wine
+{
+    public decimal Price;
+    public int Year;
+    public Wine (decimal price) { Price = price; }
+    public Wine (decimal price, int year) : this (price) { Year = year; }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><ul><li>当同一个类型下的构造函数 A 调用构造函数 B 的时候，B 先执行</li> <li>❗️ ​ 可以把表达式传递给另一个构造函数，但表达式本身不能使用<code>this</code>引用，因为这时候对象还没有被初始化，所以任何方法调用都会失败</li></ul> <hr> <h3 id="无参构造函数"><a href="#无参构造函数" class="header-anchor">#</a> ☑️ <strong>无参构造函数</strong></h3> <ul><li>对于<code>class</code>，如果你<em>没有定义</em>任何构造函数的话，那么 C#编译器会<em>自动生成</em>一个无参的<code>public</code>构造函数</li> <li>但是如果你<em>定义</em>了构造函数，那么这个无参的构造函数就<em>不会被生成</em>了</li></ul> <hr> <h3 id="构造函数和字段的初始化顺序"><a href="#构造函数和字段的初始化顺序" class="header-anchor">#</a> ☑️ <strong>构造函数和字段的初始化顺序</strong></h3> <ul><li><em>字段的初始化发生在构造函数执行之前</em></li> <li>字段按照声明的先后顺序进行初始化</li></ul> <hr> <h3 id="deconstructor（c-7）"><a href="#deconstructor（c-7）" class="header-anchor">#</a> ☑️ <strong>DECONSTRUCTOR（C#7）</strong></h3> <ul><li>C#7 引入了 deconstructor 模式</li> <li>作用基本和构造函数相反，它会把字段反赋给一堆变量</li> <li>❗️ 方法名必须是<code>Deconstruct</code>，有一个或多个<code>out</code>参数</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>public void Deconstruct(out string name, out int age)
+{
+    name = this.name;
+    age = this.age;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>var stu = new Student(&quot;Jack&quot;， 18);
+var (name, age) = stu;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><ul><li>Deconstruction 可以被重载</li> <li>Deconstruction 这个方法可以是扩展方法</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>public static class Extensions
+{
+    public static void Deconstruct(this Student stu, out string name, out int age)
+    {
+        name = stu.name;
+        age = stu.age;
+    }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>var stu = new Student(&quot;Jack&quot;, 21);
+stu.Deconstruct(out var name, out var age);
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><hr> <h2 id="_3-3-对象初始化、this、属性、索引器"><a href="#_3-3-对象初始化、this、属性、索引器" class="header-anchor">#</a> 3.3 对象初始化、this、属性、索引器</h2> <blockquote><p>修改时间：2020 年 5 月 11 日 23 点 47 分</p></blockquote> <h3 id="对象初始化器"><a href="#对象初始化器" class="header-anchor">#</a> ☑️ <strong>对象初始化器</strong></h3> <ul><li>对象任何可访问的字段/属性在构建之后，可通过对象初始化器直接为其进行设定值</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>public class Bunny
+{
+    public string Name;
+    public bool LikesCarrots;
+    public bool LikesHumans;
+
+    public Bunny () {}
+    public Bunny (string n) { Name = n }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>Bunny b1 = new Bunny { Name = &quot;Bo&quot;, LikesCarrots = true, LikesHumans = false };
+Bunnt b2 = new Bunnt (&quot;Bo&quot;) { LikesCarrots = true, LikesHumans = false };
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><hr> <h3 id="对象初始化器-vs-可选参数"><a href="#对象初始化器-vs-可选参数" class="header-anchor">#</a> ☑️ <strong>对象初始化器 VS 可选参数</strong></h3> <ul><li>如果不使用初始化器，上例中的构造函数也可以使用可选参数：</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>public Bunny (string name, bool likesCarrots = false, bool likesHumans = false)
+{
+    Name = name;
+    LikesCarrots = likesCarrots;
+    LikesHumans = likesHumans;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>Bunny b1 = new Bunny (name: &quot;Bo&quot;, likesCarrots: true);
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><ul><li>可选参数方式
+<ul><li><em>优点</em>：可以让 Bunny 类的字段/属性只读</li> <li><em>缺点</em>：每个可选参数的值都被嵌入到 calling sit，C#会把构造函数的调用翻译成：</li></ul></li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>Bunny b1 = new Bunny (&quot;Bo&quot;, true, false);
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><hr> <h3 id="this-引用"><a href="#this-引用" class="header-anchor">#</a> ⭐️ <strong>THIS 引用</strong></h3> <ul><li><code>this</code>引用指的是实例的本身</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>public class Panda
+{
+    public Panda Mate;
+
+    public void Marry (Panda partner)
+    {
+        Mate = partner;
+        partner.Mate = this;
+    }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><ul><li><code>this</code>引用可以让你把字段与本地变量或参数区分开</li> <li>❗️ 只有<code>class/struct</code>的非静态成员才可以使用<code>this</code></li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>public class Test
+{
+    string name;
+    public Test (string name) { this.name = name; }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><hr> <h3 id="属性-propertyies"><a href="#属性-propertyies" class="header-anchor">#</a> ⭐️ <strong>属性 PROPERTYIES</strong></h3> <ul><li>从外边来看，属性和字段很像。但从内部看，属性含有逻辑，就像方法一样</li> <li>属性的声明和字段的声明很像，但多了一个<code>get set</code>块。</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>public class Stock
+{
+    decimal currentPrice;
+
+    public decimal CurrentPrice
+    {
+        get { return currentPrice; }
+        set { currentPrice = value; }
+    }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><ul><li><code>get/set</code>代表属性的访问器</li> <li><code>get</code>访问器会在属性被<em>读取</em>的时候运行，必须返回一个该属性类型的值</li> <li><code>set</code>访问器会在属性被<em>赋值</em>的时候运行，有一个隐式的该类型的参数<code>value</code>，通常你会把<code>value</code>赋给一个<em>私有字段</em></li></ul> <blockquote><p><em>属性与字段的区别</em>：尽管属性的访问方式与字段的访问方式相同，但不同之处在于，属性赋予了实现者对获取和赋值的完全控制权。这种控制允许实现者选择任意所需的内部表示，<u>不向属性的使用者公开其内部实现细节</u></p></blockquote> <hr> <h3 id="只读和计算的属性"><a href="#只读和计算的属性" class="header-anchor">#</a> ☑️ <strong>只读和计算的属性</strong></h3> <ul><li>如果属性只有<code>get</code>访问器，那么它是<em>只读</em>的</li> <li>如果只有<code>set</code>访问器，那么它就是只写的（很少这样用）</li> <li>属性通常拥有一个专用的“幕后”字段（backing field），这个幕后字段用来存储数据</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>decimal currentPrice, shareOwned;
+
+public deciaml Worth
+{
+    get { return currentPrice * sharesOwned; }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><hr> <h3 id="expression-bodied-属性"><a href="#expression-bodied-属性" class="header-anchor">#</a> ☑️ <strong>EXPRESSION_BODIED 属性</strong></h3> <ul><li>从 C#6 开始，你可以使用 Expression-bodied 形式来表示只读属性</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>public decimal Worth =&gt; currentPrice * sharesOwned;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><ul><li>C#7，允许<code>set</code>访问器也使用该形式</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>public decimal Worth
+{
+    get =&gt; currentPrice * sharesOwned;
+    set =&gt; sharesOwned = value / currentPrice;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><hr> <h3 id="自动属性"><a href="#自动属性" class="header-anchor">#</a> ☑️ <strong>自动属性</strong></h3> <ul><li>属性最常见的一种实践就是：getter 和 setter 只是对 private field 进行简单直接的读写</li> <li>自动属性声明就告诉编译器来提供这种实现</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>pulbic class Stock
+{
+    ...
+		public decimal CurrentPrice { get; set; }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><ul><li>编译器会自动生成一个私有的幕后字段，❗️ 其名称不可以引用（由编译器生成）</li> <li><em><code>set</code>访问器也可以是<code>private</code>或<code>protected</code></em></li></ul> <hr> <h3 id="属性初始化器"><a href="#属性初始化器" class="header-anchor">#</a> ☑️ <strong>属性初始化器</strong></h3> <ul><li>从 C#6 开始，你可以为自动属性添加属性初始化器</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>public decimal CurrentPrice { get; set; } = 123;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><ul><li><em>只读的自动属性也可以使用（只读自动属性也可以在构造函数里被赋值）</em></li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>public int Maximum { get; } = 999;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><hr> <h3 id="get-和-set-的访问性"><a href="#get-和-set-的访问性" class="header-anchor">#</a> ☑️ <strong>GET 和 SET 的访问性</strong></h3> <ul><li><code>get</code>和<code>set</code>访问器可以拥有不同的访问级别
+<ul><li><em>典型用法</em>：<code>public get</code>，<code>internal/private set</code></li></ul></li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>public class Foo
+{
+    private decimal x;
+    public decimal X
+    {
+        get	{ return x; }
+        private set { x = Math.Round (value, 2); }
+    }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><ul><li>❗️ 注意，属性的访问级别更“宽松”一些，访问器的访问级别更“严”一些</li></ul> <hr> <h3 id="索引器"><a href="#索引器" class="header-anchor">#</a> ☑️ <strong>索引器</strong></h3> <ul><li>索引器提供了一种可以访问封装了列表值或字典值的<code>class/struct</code>的元素的一种自然的语法</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>string s = &quot;hello&quot;;
+Console.WriteLine (s[0]);	// 'h'
+Console.WriteLine (s[3]);	// 'l'
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><ul><li>语法很像使用数组时用的语法，但是这里的索引参数可以是任何类型的</li> <li>索引器和属性拥有同样的修饰符</li> <li>可以按照下列方式使用 null 条件操作符</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>string s = null;
+Console.WriteLine (s?[0]);
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><ul><li>实现索引器：需要定义一个<em>this</em>属性，并通过中括号指定参数</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>class Sentence
+{
+    string[] words = &quot;The quick brown fox&quot;.Split();
+
+    public string this [int wordNum]	// indexer
+    {
+        get { return words [wordNum]; }
+        set { words [wordNum] = value; }
+    }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><ul><li>一个索引器可以声明多个索引器，它们的参数类型可以不同</li> <li>一个索引器可以有多个参数</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>public string this [int arg1, string arg2]
+{
+    get { ... } set { ... }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><ul><li>如果不写<code>set</code>访问器，那么这个索引器就是<em>只读</em>的</li> <li>在 C#6 以后，也可以使用 expression-bodied 语法</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>public string this [int wordNum] =&gt; words [wordNum];
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><hr> <h2 id="_3-4-常量、静态构造函数和类、终结器、局部类和方法、nameof"><a href="#_3-4-常量、静态构造函数和类、终结器、局部类和方法、nameof" class="header-anchor">#</a> 3.4 常量、静态构造函数和类、终结器、局部类和方法、nameof</h2> <blockquote><p>修改时间：2020 年 5 月 13 日 15 点 35 分</p></blockquote> <h3 id="常量"><a href="#常量" class="header-anchor">#</a> ☑️ <strong>常量</strong></h3> <ul><li>一个<em>值不可以改变</em>的<em>静态字段</em></li> <li>在<em>编译时</em>值就已经定下来了</li> <li>任何使用常量的地方，编译器都会把这个常量值替换为它的值</li> <li>常量的类型可以是内置的数值类型、bool、char、string 或 enum</li> <li>❗️ 使用 const 关键字声明，声明的同时必须使用具体的值来对比其初始化</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>public class Test
+{
+    public const string Message = &quot;Hello World&quot;;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><hr> <h3 id="常量与静态只读字段"><a href="#常量与静态只读字段" class="header-anchor">#</a> ☑️ <strong>常量与静态只读字段</strong></h3> <ul><li>常量比静态字段更严格:
+<ul><li>可使用的类型</li> <li>字段初始化的语义上</li></ul></li> <li>常量是再编译时进行值的估算的</li></ul> <blockquote><p><em>注意</em>：当值有可能改变，并且需要暴露给其他 Assembly 的时候，静态只读字段是相对较好的选择</p></blockquote> <hr> <h3 id="本地常量"><a href="#本地常量" class="header-anchor">#</a> ☑️ <strong>本地常量</strong></h3> <ul><li>方法里可以有本地的常量</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>static void Main()
+{
+    const double twoPI = 2 * System.Math.PI;
+    	...
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><hr> <h3 id="静态构造函数"><a href="#静态构造函数" class="header-anchor">#</a> ☑️ <strong>静态构造函数</strong></h3> <ul><li>静态构造函数，每个<em>类型</em>执行一次</li> <li>非静态构造函数，每个<em>实例</em>执行一次</li> <li>❗️ 一个类型只能定义一个静态构造函数
+<ul><li>必须无参</li> <li>方法名与类型一致</li></ul></li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>class Test
+{
+    static Test() { Console.WriteLine (&quot;Type Initialized&quot;); }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><ul><li>在类型使用之前的一瞬间，编译器会自动调用类型的静态构造函数
+<ul><li>实例化一个实例</li> <li>访问类型的一个静态成员</li></ul></li> <li>❗️ 只允许使用<code>unsafe</code>和<code>extern</code>修饰符</li></ul> <blockquote><p><em>注意</em>：如果静态构造函数抛出了未处理的异常，那么这个类型在该程序的剩余声明周期将无法使用了</p></blockquote> <hr> <h3 id="初始化顺序"><a href="#初始化顺序" class="header-anchor">#</a> ⭐️ <strong>初始化顺序</strong></h3> <ul><li>静态字段的初始化器在静态构造函数被调用之前的一瞬间运行</li> <li>如果类型没有静态构造函数，那么静态字段初始化器在类型被使用之前的一瞬间执行，或者在运行时突发奇想的时候执行</li> <li>静态字段的初始化顺序与它们的声明顺序一致</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>class Foo
+{
+    public static int X = Y;		// 0
+    public static int Y = X;		// 3
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>class Program
+{
+    static void Main() { Console.WriteLine (Foo.X); }	// 3
+}
+
+class Foo
+{
+    public static Foo Instance = new Foo();
+    public static int X = 3;
+
+    Foo() { Console.WriteLine (x); }	// 0
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><hr> <h3 id="静态类"><a href="#静态类" class="header-anchor">#</a> ☑️ <strong>静态类</strong></h3> <ul><li>类也可以是静态的</li> <li>其成员必须全是静态的</li> <li>不可以有子类</li> <li>例如
+<ul><li><code>System.Console</code></li> <li><code>System.Math</code></li></ul></li></ul> <hr> <h3 id="finalizer-析构函数"><a href="#finalizer-析构函数" class="header-anchor">#</a> ☑️ <strong>FINALIZER 析构函数</strong></h3> <ul><li>Finalizer 是 class 专有的一种方法</li> <li>在 GC 回收未引用对象的内存之前运行</li> <li>其实就是对 object 的 Finalize()方法重写的一种语法</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>class Class1
+{
+    ~Class1()
+    {
+        ...
+    }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><hr> <h3 id="partial-type-局部类型"><a href="#partial-type-局部类型" class="header-anchor">#</a> ⭐️ <strong>PARTIAL TYPE 局部类型</strong></h3> <ul><li>允许一个类型的定义分布在多个地方（文件）</li> <li>典型应用：一个类的一部分是自动生成的，另一部分需要手动写代码</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>// PaymentFormGen.cs - auto-generated
+partial class PaymentForm { ... }
+
+// PaymentForm.cs - hand-authored
+partial class PaymentForm { ... }
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><ul><li>每个分布的类型都必须使用<code>partial</code>来声明</li> <li>❎ 下面这个例子就会报错：</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>partial class PaymentForm {}
+class PaymentForm {}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><ul><li>❗️ 每个分布类的成员不能冲突，不能有同样参数的构造函数</li> <li>各分布类完全靠编译器来进行解析：❗️ 每个分布类在编译时必须可用，且在一个 Assembly 里</li> <li>如果有父类，可以在一个或多个分布类上指明，但必须一致</li> <li>每个分布类可以独立的实现不同的接口</li> <li>编译器无法保证各分布类的字段的初始化顺序</li></ul> <hr> <h3 id="partial-method-局部方法"><a href="#partial-method-局部方法" class="header-anchor">#</a> ⭐️ <strong>PARTIAL METHOD 局部方法</strong></h3> <ul><li><code>partial</code>类型可以有 partial method</li> <li>自动生成的分布类里可以有 partial method，通常作为“钩子”使用，在另一部分的 partial method 里，我们可以对这个方法进行自定义</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>partial class PaymentForm		// In auto-generated file
+{
+    ...
+    partial void ValidatePayment (decimal amout);
+}
+
+partial class PaymentForm		// In hand-authored file
+{
+    ...
+    partial void ValidatePayment (deciaml amout)
+    {
+      if (amout &gt; 100)
+          ...
+    }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><ul><li>partial method 由两部分组成：定义和实现</li> <li>定义部分通常是<em>自动生成</em>的</li> <li>实现部分通常时<em>手动编写</em>的</li> <li>如果 partial method 只有定义，没有实现，那么编译的时候该方法定义就没有了，调用该方法的代码也没有了。这就允许自动生成的代码可以自由的提供钩子，不用担心代码膨胀</li> <li>partial method 必须是<code>void</code>，并且隐式<code>private</code>的</li></ul> <hr> <h3 id="nameof-操作符-c-6"><a href="#nameof-操作符-c-6" class="header-anchor">#</a> ☑️ <strong>NAMEOF 操作符 C#6</strong></h3> <ul><li><code>nameof</code>操作符会返回任何符号（类型、成员、变量...)的名字（string）</li> <li>利于重构</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>int count = 123;
+string name = nameof (count);	// name is &quot;count&quot;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>string name = nameof (StringBuilder.Length);	// name is &quot;Length&quot;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><hr> <h2 id="_3-5-继承、多态、引用转换、virtual"><a href="#_3-5-继承、多态、引用转换、virtual" class="header-anchor">#</a> 3.5 继承、多态、引用转换、virtual</h2> <blockquote><p>修改时间：2020 年 5 月 14 日 11 点 56 分</p></blockquote> <h3 id="继承"><a href="#继承" class="header-anchor">#</a> ⭐️ <strong>继承</strong></h3> <ul><li>一个类可以继承另一个类，从而对原有类进行扩展和自定义</li> <li>可以叫做子类和父类</li> <li>继承的类让你可以重用被继承的功能</li> <li>C#里，<em>一个类只能继承于一个类，但是这个类却可以被多个类继承</em></li></ul> <hr> <h3 id="多态"><a href="#多态" class="header-anchor">#</a> ⭐️ <strong>多态</strong></h3> <ul><li>引用是多态的，类型为 x 的变量可以引用其子类的对象</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>public static void Display (Assset asset)
+{
+    System.Console.WriteLine (asset.Name);
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>Stock msft = new Stock ...;
+House mansion = new House ...;
+
+Display (msft);
+Display (mansion);
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><ul><li>因为子类具有父类的全部功能特性，所以参数可以是子类</li> <li>❗️ 反过来则不行</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>static void Main() { Display (new Asset()); }	// Compile-time error
+
+public static void Display (House house)	// Will not accept Asset
+{
+    System.Console.WriteLine (house.Mortgage);
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><hr> <h3 id="引用转换"><a href="#引用转换" class="header-anchor">#</a> ⭐️ <strong>引用转换</strong></h3> <ul><li>一个对象的引用可以<em>隐式</em>转换到其父类的引用（向上转换）</li> <li>想转换到子类的引用则需要<em>显式</em>转换（向下转换）</li> <li>引用转换：<em>创建了一个新的引用，它也指向同一个对象</em></li></ul> <hr> <h3 id="向上转换"><a href="#向上转换" class="header-anchor">#</a> ☑️ <strong>向上转换</strong></h3> <ul><li>从子类的引用创建父类的引用</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>Stock msft = new Stock();
+Asset a = msft;			// Upcast
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><ul><li>变量 a 依然指向同一个 Stock 对象（msft 也指向它）</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>Console.WriteLine (a == msft);			// True
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><ul><li>尽管变量 a 和 msft 指向同一个对象，但是 a 的可视范围更小一些</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>Console.WriteLine (a.Name);			// OK
+Console.WriteLine (a.ShareOwned);	// Error: SharesOwned undefined
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><hr> <h3 id="向下转换"><a href="#向下转换" class="header-anchor">#</a> ☑️ <strong>向下转换</strong></h3> <ul><li>从父类的引用创建出子类的引用</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>Stock msft = new Stock();
+Asset a = msft;							// Upcast
+Stock s = (Stock)a;						// Downcast
+Console.WriteLine (s.SharesOwned);		// &lt;No error&gt;
+COnsole.WriteLine (s == a);				// True
+Console.WriteLine (s == msft);			// True
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><ul><li>和向上转换一样，只涉及到引用，底层的对象不会受影响</li> <li>需要显式转换，因为可能会失败</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>House h = new House();
+Asset a = h;				// Upcast always succeeds
+Stock s = (Stock)a;			// Downcast fails: a is not a Stock
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><ul><li>如果向下转换失败，那么会抛出 InvalidCasstException（属于运行时类型检查）</li></ul> <hr> <h3 id="as-操作符"><a href="#as-操作符" class="header-anchor">#</a> ☑️ <strong>AS 操作符</strong></h3> <ul><li><code>as</code>操作符会执行向下转换，如果转换失败，<em>不会抛出异常</em>，值会变为<code>null</code></li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>Asset a = new Asset();
+Stock s = a as Stock;		// s is null; no exception thrown
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><ul><li><code>as</code>操作符无法做自定义转换</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>long x = 3 as long;		// Compile-time error
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><hr> <h3 id="is-操作符和模式变量"><a href="#is-操作符和模式变量" class="header-anchor">#</a> ☑️ <strong>IS 操作符和模式变量</strong></h3> <ul><li><code>is</code>操作符会检验引用的转换是否成功。换句话说，判断对象是否派生于某个类（或者实现了某个接口）</li> <li>通常用于向下转换前的验证</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>if (as is Stock)
+    Console.WriteLine (((Stock)a).ShareOwned);
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><ul><li><p>如果拆箱转换可以成功的话，那么使用<code>is</code>操作符的结果会是<code>true</code></p></li> <li><p>C#7 里，在使用<code>is</code>操作符的时候，可以引入一个变量</p></li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>if (a is Stock s)
+    Console.WriteLine (s.SharesOwned);
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>Stock s;
+if (a is Stock)
+{
+    s = (Stock) a;
+    Console.WriteLine (s.SharesOwned);
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><ul><li>引用的变量可以立即“消费”</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>if (a is Stock s &amp;&amp; s.SharesOwned &gt; 100000)
+    Console.WriteLine (&quot;Wealthy&quot;);
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>if (a is Stock s &amp;&amp; s.SharesOwned &gt; 100000)
+    Console.WriteLine (&quot;Wealthy&quot;);
+else
+    s = new Stock();	// s is in scope
+Console.WriteLine (s.ShareOwned);	// Still in scope
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><hr> <h3 id="virtual-函数成员"><a href="#virtual-函数成员" class="header-anchor">#</a> ⭐️ <strong>VIRTUAL 函数成员</strong></h3> <ul><li>标记为<code>virtual</code>的函数可以被子类重写，包括<em>方法、属性、索引器、事件</em></li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>public class Asset
+{
+    public string Name;
+    public virtual decimal Liability =&gt; 0;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><hr> <h3 id="override-重写"><a href="#override-重写" class="header-anchor">#</a> ⭐️ <strong>OVERRIDE 重写</strong></h3> <ul><li>使用<code>override</code>修饰符，子类可以重写父类的函数</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>public class Stock : Asset
+{
+    public long SharesOwned;
+}
+
+public class House : Asset
+{
+    public decimal Mortgage;
+    public override decimal Liability =&gt; Mortgage;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>House mansion = new House { Name = &quot;McMansion&quot;, Mortgage = 250000 };
+Asset a = mansion;
+Console.WriteLine (mansion.Liability);	// 250000
+Console.WriteLine (a.Liability);		// 250000
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><ul><li><code>virtual</code>方法和重写方法的<em>签名、返回类型、可访问程度</em>必须是<em>一致</em>的</li> <li>重写方法里使用 base 关键字可以调用父类的是实现</li></ul> <blockquote><p><em>注意</em>：在构造函数里调用<code>virtual</code>方法可能比较危险，因为编写子类的开发人员可能不知道他们在重写方法的时候，面对的是一个未完全初始化的对象。</p> <p>换句话说，<u>重写的方法可能会访问依赖于还未被构造函数初始化的字段的属性或方法</u></p></blockquote> <hr></div> <footer class="page-edit" style="display:none;"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">5/22/2020, 2:25:32 AM</span></div></footer> <!----> <!----></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-1e128e82 data-v-1e128e82><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-1e128e82><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-1e128e82></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-1e128e82></path></svg></div><div class="reco-bgm-panel" data-v-0a2aff30><audio id="bgm" src="https://assets.smallsunnyfox.com/music/2.mp3" data-v-0a2aff30></audio> <div class="reco-float-box" style="bottom:200px;z-index:999999;display:none;" data-v-0a2aff30 data-v-0d264cb4 data-v-0a2aff30><img src="https://assets.smallsunnyfox.com/music/2.jpg" data-v-0a2aff30></div> <div class="reco-bgm-box" style="left:10px;bottom:10px;z-index:999999;" data-v-0a2aff30 data-v-0d264cb4 data-v-0a2aff30><div class="reco-bgm-cover" style="background-image:url(https://assets.smallsunnyfox.com/music/2.jpg);" data-v-0a2aff30><div class="mini-operation" style="display:none;" data-v-0a2aff30><i class="reco-bgm reco-bgm-pause" style="display:none;" data-v-0a2aff30></i> <i class="reco-bgm reco-bgm-play" style="display:none;" data-v-0a2aff30></i></div> <div class="falut-message" style="display:none;" data-v-0a2aff30>
+          播放失败
+        </div></div> <div class="reco-bgm-info" data-v-0a2aff30 data-v-0d264cb4 data-v-0a2aff30><div class="info-box" data-v-0a2aff30><i class="reco-bgm reco-bgm-music music" data-v-0a2aff30></i>강남역 4번 출구</div> <div class="info-box" data-v-0a2aff30><i class="reco-bgm reco-bgm-artist" data-v-0a2aff30></i>Plastic / Fallin` Dild</div> <div class="reco-bgm-progress" data-v-0a2aff30><div class="progress-bar" data-v-0a2aff30><div class="bar" data-v-0a2aff30></div></div></div> <div class="reco-bgm-operation" data-v-0a2aff30><i class="reco-bgm reco-bgm-last last" data-v-0a2aff30></i> <i class="reco-bgm reco-bgm-pause pause" style="display:none;" data-v-0a2aff30></i> <i class="reco-bgm reco-bgm-play play" data-v-0a2aff30></i> <i class="reco-bgm reco-bgm-next next" data-v-0a2aff30></i> <i class="reco-bgm reco-bgm-volume1 volume" data-v-0a2aff30></i> <i class="reco-bgm reco-bgm-mute mute" style="display:none;" data-v-0a2aff30></i> <div class="volume-bar" data-v-0a2aff30><div class="bar" data-v-0a2aff30></div></div></div></div> <div class="reco-bgm-left-box" data-v-0a2aff30 data-v-0d264cb4 data-v-0a2aff30><i class="reco-bgm reco-bgm-left" data-v-0a2aff30></i></div></div></div></div></div>
+    <script src="/assets/js/app.d9584d57.js" defer></script><script src="/assets/js/3.0f02f0c2.js" defer></script><script src="/assets/js/1.9aba950e.js" defer></script><script src="/assets/js/11.07b7525a.js" defer></script>
+  </body>
+</html>
