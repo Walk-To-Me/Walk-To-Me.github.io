@@ -68,6 +68,12 @@ module.exports = {
           "https://vuepress-theme-reco.recoluan.com/icon_vuepress_reco.png",
         link: "https://vuepress-theme-reco.recoluan.com",
       },
+      {
+        title: "何某人blog",
+        desc: "老单身🐕了！？",
+        avatar: "http://60.205.255.147/profile.jpg",
+        link: "http://60.205.255.147",
+      },
     ],
     logo: "/logo.png",
     search: true,
